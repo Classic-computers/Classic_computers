@@ -1,7 +1,6 @@
 "use client"
 
-import { Monitor, Instagram, Youtube, Phone, MapPin, Heart } from "lucide-react"
-
+import { Monitor, Phone, MapPin, Heart, Globe, PlayCircle } from "lucide-react"
 const quickLinks = [
   { href: "#videos", label: "Watch Videos" },
   { href: "#inventory", label: "Browse Laptops" },
