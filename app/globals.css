@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-  /* Color palette - Futuristic dark mode with YouTube red accents */
   --color-background: #030712;
   --color-foreground: #f8fafc;
   --color-muted: #1e293b;
@@ -15,22 +14,25 @@
   --color-card: #0f172a;
   --color-card-foreground: #f8fafc;
   --color-border: #1e3a5f;
-  
-  /* Custom colors */
   --color-youtube-red: #ff0000;
   --color-whatsapp-green: #25d366;
   --color-deep-blue: #0a1628;
   --color-glow-blue: #3b82f6;
-  
-  /* Radius */
   --radius: 0.75rem;
-  
-  /* Font families */
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: ui-monospace, monospace;
 }
 
-/* Custom utilities */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+}
+
 .gradient-hero {
   background: linear-gradient(180deg, #0a1628 0%, #030712 50%, #0f0a1f 100%);
 }
@@ -52,7 +54,6 @@
   background-clip: text;
 }
 
-/* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -131,7 +132,6 @@
   animation: scale-in 0.5s ease-out forwards;
 }
 
-/* Animation delays */
 .delay-100 { animation-delay: 100ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
@@ -139,12 +139,6 @@
 .delay-500 { animation-delay: 500ms; }
 .delay-600 { animation-delay: 600ms; }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
