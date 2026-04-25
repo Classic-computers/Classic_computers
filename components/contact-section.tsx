@@ -1,7 +1,6 @@
 "use client"
 
-import { MapPin, Phone, Clock, Instagram, Youtube, MessageCircle, Navigation } from "lucide-react"
-
+import { MapPin, Phone, Clock, MessageCircle, Navigation, Globe } from "lucide-react"
 export function ContactSection() {
   return (
     <section id="contact" className="py-24">
