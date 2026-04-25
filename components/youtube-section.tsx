@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import Image from "next/image"
-import { Play, ExternalLink, Youtube } from "lucide-react"
-
+import { Play, ExternalLink, PlayCircle } from "lucide-react"
 // Featured YouTube videos - replace with your actual video IDs
 const videos = [
   {
