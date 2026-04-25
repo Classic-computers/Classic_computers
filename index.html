@@ -3,148 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Computers | Premium Tech Hub</title>
+    <title>Classic Computers | SR Nagar's Best Laptop Hub</title>
     <script src="https://tailwindcss.com"></script>
     <link href="https://cloudflare.com" rel="stylesheet">
-    <link href="https://unpkg.com" rel="stylesheet">
     <style>
-        :root { --primary: #3b82f6; --accent: #f59e0b; }
-        body { background: #020617; font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.05); }
-        .gradient-text { background: linear-gradient(to right, #60a5fa, #c084fc); -webkit-background-clip: text; color: transparent; }
-        .hero-zoom { transition: transform 20s linear; transform: scale(1); }
-        .hero-zoom:hover { transform: scale(1.2); }
-        .service-card:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(59, 130, 246, 0.2); }
+        @keyframes gradient-bg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+        .animated-gradient { background: linear-gradient(-45deg, #0f172a, #1e3a8a, #020617, #1e40af); background-size: 400% 400%; animation: gradient-bg 15s ease infinite; }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.4s; }
+        .glass-card:hover { transform: translateY(-10px); border-color: #3b82f6; background: rgba(255, 255, 255, 0.1); }
+        .btn-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
     </style>
 </head>
-<body class="text-slate-200">
+<body class="animated-gradient text-white min-h-screen font-sans">
 
-    <!-- Premium Navbar -->
-    <nav class="fixed w-full z-50 px-6 py-4">
-        <div class="max-w-7xl mx-auto glass rounded-2xl px-6 py-3 flex justify-between items-center">
-            <div class="text-xl font-black tracking-widest text-white uppercase italic">
-                Classic <span class="text-blue-500">Computers</span>
-            </div>
-            <div class="hidden md:flex gap-8 text-sm font-bold uppercase tracking-tighter">
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me" class="fixed bottom-8 right-8 z-50 bg-green-500 p-4 rounded-full text-white text-3xl shadow-2xl hover:scale-110 transition active:scale-90">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navbar -->
+    <nav class="p-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4">
+            <h1 class="text-2xl font-black italic tracking-tighter uppercase">Classic <span class="text-blue-500">Computers</span></h1>
+            <div class="hidden md:flex gap-8 font-bold text-sm uppercase">
                 <a href="#services" class="hover:text-blue-400">Services</a>
-                <a href="#gallery" class="hover:text-blue-400">Products</a>
-                <a href="#contact" class="hover:text-blue-400">Support</a>
+                <a href="#gallery" class="hover:text-blue-400">Gallery</a>
+                <a href="tel:+919550191261" class="text-blue-400 font-black tracking-widest">95501 91261</a>
             </div>
-            <a href="https://wa.me" class="bg-blue-600 px-6 py-2 rounded-full font-bold hover:scale-105 transition active:scale-95 shadow-lg shadow-blue-500/30">WhatsApp</a>
         </div>
     </nav>
 
-    <!-- Visual Hero Section -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="https://unsplash.com" class="hero-zoom w-full h-full object-cover opacity-30">
-        </div>
-        <div class="relative z-10 text-center px-4" data-aos="fade-up">
-            <h1 class="text-5xl md:text-8xl font-black mb-6 uppercase leading-none">
-                Experience <br> <span class="gradient-text italic">Performance</span>
-            </h1>
-            <p class="text-lg md:text-2xl text-slate-400 mb-10 max-w-2xl mx-auto">SR Nagar లో నంబర్ 1 ల్యాప్‌టాప్ స్టోర్. సెకండ్ హ్యాండ్ ల్యాప్‌టాప్‌లు మరియు చిప్ లెవల్ సర్వీస్ కు నమ్మకమైన చిరునామా.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="tel:+919550191261" class="bg-white text-black px-10 py-4 rounded-xl font-black hover:bg-blue-500 hover:text-white transition uppercase">Call Expert</a>
-                <a href="https://share.google" target="_blank" class="glass px-10 py-4 rounded-xl font-black hover:bg-white/10 transition uppercase">Visit Store</a>
+    <!-- Hero -->
+    <section class="py-20 px-6 text-center">
+        <div class="max-w-4xl mx-auto">
+            <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-sm font-bold border border-blue-500/30 mb-6 inline-block">THE HUB OF TECHNOLOGY</span>
+            <h2 class="text-6xl md:text-8xl font-black mb-8 leading-none uppercase">Best Quality <br><span class="text-blue-500">Laptop Service</span></h2>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto italic">"SR Nagar లో అత్యంత తక్కువ ధరకే ప్రీమియం ల్యాప్‌టాప్‌లు మరియు నమ్మకమైన రిపేర్ సేవలు."</p>
+            <div class="flex flex-wrap gap-6 justify-center">
+                <a href="https://share.google" class="bg-blue-600 hover:bg-blue-700 px-12 py-5 rounded-2xl font-black text-xl transition btn-glow">VISIT STORE</a>
+                <a href="https://instagram.com" class="glass-card px-12 py-5 rounded-2xl font-black text-xl hover:bg-white hover:text-black transition">INSTAGRAM</a>
             </div>
         </div>
     </section>
 
-    <!-- Product Showcase (Image-heavy) -->
-    <section id="gallery" class="py-24 px-6 bg-slate-950">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-16">
-                <h2 class="text-3xl font-black mb-2 uppercase">Premium Collection</h2>
-                <div class="h-1 w-20 bg-blue-500"></div>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="h-80 rounded-3xl overflow-hidden group relative" data-aos="zoom-in">
-                    <img src="https://unsplash.com" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                        <span class="font-bold">Apple MacBooks</span>
-                    </div>
-                </div>
-                <div class="h-80 rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="100">
-                    <img src="https://unsplash.com" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                        <span class="font-bold">Dell Latitude Series</span>
-                    </div>
-                </div>
-                <div class="h-80 rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="200">
-                    <img src="https://unsplash.com" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                        <span class="font-bold">Hardware Components</span>
-                    </div>
-                </div>
-                <div class="h-80 rounded-3xl overflow-hidden group relative" data-aos="zoom-in" data-aos-delay="300">
-                    <img src="https://unsplash.com" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-6">
-                        <span class="font-bold">HP ProBooks</span>
-                    </div>
-                </div>
-            </div>
+    <!-- Services Grid -->
+    <section id="services" class="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-card p-10">
+            <i class="fas fa-microchip text-blue-500 text-5xl mb-6"></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Chip Level Repair</h3>
+            <p class="text-slate-400">మదర్ బోర్డ్ సమస్యలు, పవర్ ఇష్యూస్ మరియు అన్ని రకాల క్లిష్టమైన రిపేర్లు అనుభవం ఉన్న టెక్నీషియన్స్ ద్వారా చేయబడతాయి.</p>
+        </div>
+        <div class="glass-card p-10 border-blue-500/50">
+            <i class="fas fa-laptop text-blue-500 text-5xl mb-6"></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Premium Sales</h3>
+            <p class="text-slate-400">Dell, HP, Lenovo మరియు MacBooks. అన్ని రకాల బ్రాండెడ్ ల్యాప్‌టాప్‌లు వారంటీతో అతి తక్కువ ధరకే లభిస్తాయి.</p>
+        </div>
+        <div class="glass-card p-10">
+            <i class="fas fa-rocket text-blue-500 text-5xl mb-6"></i>
+            <h3 class="text-2xl font-bold mb-4 uppercase">Fast Upgrades</h3>
+            <p class="text-slate-400">కేవలం 30 నిమిషాల్లో SSD మరియు RAM అప్‌గ్రేడ్. మీ పాత ల్యాప్‌టాప్ వేగాన్ని 10 రెట్లు పెంచుకోండి.</p>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-24 px-6 bg-[#020617]">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10">
-            <div class="glass p-10 rounded-[40px] service-card transition duration-500">
-                <i class="fas fa-microchip text-blue-500 text-5xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4 italic uppercase">Master Service</h3>
-                <p class="text-slate-400">ల్యాప్‌టాప్ ఆన్ అవ్వడం లేదా? డెడ్ అయిందా? మా చిప్ లెవల్ మాస్టర్స్ దాన్ని రిపేర్ చేస్తారు.</p>
-            </div>
-            <div class="glass p-10 rounded-[40px] service-card transition duration-500 border-2 border-blue-600/20">
-                <i class="fas fa-tags text-blue-500 text-5xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4 italic uppercase">Best Deals</h3>
-                <p class="text-slate-400">అతి తక్కువ ధరకే వారంటీతో కూడిన ప్రొఫెషనల్ ల్యాప్‌టాప్‌లు లభిస్తాయి.</p>
-            </div>
-            <div class="glass p-10 rounded-[40px] service-card transition duration-500">
-                <i class="fas fa-shipping-fast text-blue-500 text-5xl mb-6"></i>
-                <h3 class="text-2xl font-bold mb-4 italic uppercase">Fast Upgrade</h3>
-                <p class="text-slate-400">SSD & RAM అప్‌గ్రేడ్స్ కేవలం 1 గంటలో పూర్తి చేసి మీ ల్యాప్‌టాప్‌ను వేగంగా మారుస్తాం.</p>
-            </div>
+    <!-- Footer Area -->
+    <footer class="py-20 text-center border-t border-white/5">
+        <div class="mb-8">
+            <p class="text-slate-500 font-bold uppercase tracking-widest">Classic Computers • Hyderabad • SR Nagar</p>
+            <p class="text-slate-600 mt-2 italic">Opp: New Police Station, Hyderabad, Telangana</p>
         </div>
-    </section>
-
-    <!-- Interactive Location Section -->
-    <section id="contact" class="py-24 px-6 bg-blue-600">
-        <div class="max-w-6xl mx-auto rounded-[50px] bg-black p-10 md:p-20 flex flex-col md:flex-row gap-12 items-center shadow-2xl">
-            <div class="flex-1">
-                <h2 class="text-5xl font-black mb-6 uppercase tracking-tighter">ఇప్పుడే రండి!</h2>
-                <p class="text-slate-400 mb-10 text-xl leading-relaxed">
-                    SR Nagar లో మమ్మల్ని కలవండి. మా సర్వీస్ చూస్తే మీరే మళ్ళీ మళ్ళీ వస్తారు!
-                </p>
-                <div class="space-y-4">
-                    <a href="https://share.google" class="flex items-center gap-4 bg-slate-900 p-4 rounded-2xl border border-white/5 hover:bg-blue-600 transition">
-                        <i class="fas fa-map-marked-alt text-2xl text-blue-500"></i>
-                        <span>Opp: New Police Station, SR Nagar, Hyderabad</span>
-                    </a>
-                </div>
-            </div>
-            <div class="flex-1 w-full">
-                <div class="aspect-square bg-blue-900/20 rounded-full flex items-center justify-center border-4 border-dashed border-blue-500/30">
-                    <div class="text-center">
-                        <i class="fas fa-location-arrow text-6xl text-blue-500 animate-bounce mb-6"></i>
-                        <p class="font-black text-2xl italic">Find Us on Maps</p>
-                        <a href="https://share.google" class="text-blue-400 font-bold hover:underline">Open Location</a>
-                    </div>
-                </div>
-            </div>
+        <div class="flex justify-center gap-10 text-3xl">
+            <a href="https://instagram.com" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
+            <a href="tel:+919550191261" class="text-blue-500 hover:scale-125 transition"><i class="fas fa-phone"></i></a>
+            <a href="https://share.google" class="text-red-500 hover:scale-125 transition"><i class="fas fa-map-marker-alt"></i></a>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-12 border-t border-white/10 text-center text-slate-500">
-        <div class="flex justify-center gap-8 mb-8">
-            <a href="https://instagram.com" class="text-3xl hover:text-white"><i class="fab fa-instagram"></i></a>
-            <a href="https://wa.me" class="text-3xl hover:text-white"><i class="fab fa-whatsapp"></i></a>
-        </div>
-        <p class="uppercase tracking-widest font-bold">Classic Computers • Hyderabad</p>
     </footer>
 
-    <script src="https://unpkg.com"></script>
-    <script>AOS.init({ duration: 1000, once: true });</script>
 </body>
 </html>
