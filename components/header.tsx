@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Menu, X, Monitor, Phone } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -19,6 +19,7 @@ export function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
     }
+
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -26,102 +27,73 @@ export function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled ? "glass py-3" : "py-5"
+        "fixed inset-x-0 top-0 z-50 transition-all duration-300",
+        isScrolled ? "bg-black/70 backdrop-blur-xl border-b border-white/10" : "bg-transparent"
       )}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="relative">
-              <Monitor className="w-8 h-8 text-primary group-hover:text-glow-blue transition-colors" />
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-accent rounded-full animate-pulse" />
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <div className="flex h-16 items-center justify-between">
+          <a href="#" className="flex items-center gap-3">
+            <div className="rounded-xl bg-primary/20 p-2">
+              <Monitor className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <span className="text-xl font-bold tracking-tight">
-                CLASSIC <span className="text-primary">COMPUTERS</span>
-              </span>
-              <p className="text-xs text-muted-foreground hidden sm:block">SR Nagar, Hyderabad</p>
+              <p className="font-semibold text-white">Classic Computers</p>
+              <p className="text-xs text-slate-400">SR Nagar, Hyderabad</p>
             </div>
           </a>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="text-sm font-medium text-slate-300 transition hover:text-white"
               >
                 {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </a>
             ))}
-          </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:+919550191261"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-500"
             >
-              <Phone className="w-4 h-4" />
-              <span className="text-sm font-medium">Call Now</span>
+              <Phone className="h-4 w-4" />
+              Call Now
             </a>
-            <a
-              href="https://wa.me/919550191261?text=Hi%20Classic%20Computers!%20I%20need%20a%20quote."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-whatsapp-green text-white hover:bg-whatsapp-green/90 transition-colors font-medium text-sm"
-            >
-              WhatsApp
-            </a>
-          </div>
+          </nav>
 
-          {/* Mobile Menu Toggle */}
           <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-muted transition-colors"
+            type="button"
             aria-label="Toggle menu"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+            className="rounded-xl border border-white/10 p-2 text-white md:hidden"
           >
-            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
 
-        {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <nav className="md:hidden mt-4 pb-4 border-t border-border pt-4 animate-fade-in-up">
+          <div className="mb-4 rounded-2xl border border-white/10 bg-slate-950/95 p-4 md:hidden">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="px-4 py-3 rounded-xl hover:bg-muted transition-colors text-muted-foreground hover:text-foreground"
+                  className="rounded-lg px-3 py-2 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="flex gap-3 mt-4 px-4">
-                <a
-                  href="tel:+919550191261"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-primary/10 text-primary"
-                >
-                  <Phone className="w-4 h-4" />
-                  Call
-                </a>
-                <a
-                  href="https://wa.me/919550191261?text=Hi%20Classic%20Computers!%20I%20need%20a%20quote."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-whatsapp-green text-white"
-                >
-                  WhatsApp
-                </a>
-              </div>
+              <a
+                href="tel:+919550191261"
+                className="mt-2 inline-flex items-center justify-center gap-2 rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-white"
+              >
+                <Phone className="h-4 w-4" />
+                Call Now
+              </a>
             </div>
-          </nav>
+          </div>
         )}
       </div>
     </header>

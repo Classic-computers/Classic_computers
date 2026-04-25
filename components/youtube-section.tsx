@@ -3,45 +3,45 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Play, ExternalLink, PlayCircle } from "lucide-react"
-// Featured YouTube videos - replace with your actual video IDs
+
 const videos = [
   {
-    id: "VIDEO_ID_1",
+    id: "dQw4w9WgXcQ",
     title: "Dell Latitude E7470 Unboxing - Premium Business Laptop",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "25K",
     category: "Unboxing",
   },
   {
-    id: "VIDEO_ID_2", 
-    title: "HP Elitebook 840 G5 - Full Review & Specs",
+    id: "dQw4w9WgXcQ",
+    title: "HP EliteBook 840 G5 - Full Review & Specs",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "18K",
     category: "Review",
   },
   {
-    id: "VIDEO_ID_3",
+    id: "dQw4w9WgXcQ",
     title: "MacBook Pro Dead - Chip Level Repair Live",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "42K",
     category: "Repair",
   },
   {
-    id: "VIDEO_ID_4",
+    id: "dQw4w9WgXcQ",
     title: "Lenovo ThinkPad X1 Carbon - Best Business Laptop?",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "31K",
     category: "Unboxing",
   },
   {
-    id: "VIDEO_ID_5",
+    id: "dQw4w9WgXcQ",
     title: "Dell Motherboard No Power - Full Repair Tutorial",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "55K",
     category: "Repair",
   },
   {
-    id: "VIDEO_ID_6",
+    id: "dQw4w9WgXcQ",
     title: "HP ProBook vs EliteBook - Which Should You Buy?",
     thumbnail: "https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg",
     views: "22K",
@@ -54,38 +54,35 @@ const categories = ["All", "Unboxing", "Repair", "Review", "Comparison"]
 export function YoutubeSection() {
   const [activeCategory, setActiveCategory] = useState("All")
 
-  const filteredVideos = activeCategory === "All" 
-    ? videos 
-    : videos.filter(v => v.category === activeCategory)
+  const filteredVideos =
+    activeCategory === "All"
+      ? videos
+      : videos.filter((v) => v.category === activeCategory)
 
   return (
-    <section id="videos" className="py-24 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-youtube-red/10 text-youtube-red mb-6">
-            <Youtube className="w-4 h-4" />
-            <span className="text-sm font-semibold">YouTube Channel</span>
+    <section id="videos" className="px-4 py-20 sm:px-6">
+      <div className="mx-auto max-w-7xl">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-red-500/20 bg-red-500/10 px-4 py-2 text-sm text-red-300">
+            <PlayCircle className="h-4 w-4" />
+            YouTube Channel
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Watch Before You <span className="text-gradient">Buy</span>
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Transparent unboxings, live repairs, and honest reviews. 
-            See exactly what you&apos;re getting.
+          <h2 className="text-3xl font-bold text-white sm:text-4xl">Watch Before You Buy</h2>
+          <p className="mt-4 text-slate-400">
+            Transparent unboxings, live repairs, and honest reviews. See exactly what you're getting.
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="mt-8 flex flex-wrap justify-center gap-3">
           {categories.map((category) => (
             <button
               key={category}
+              type="button"
               onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+              className={`rounded-xl px-5 py-2.5 text-sm font-medium transition-all ${
                 activeCategory === category
                   ? "bg-primary text-primary-foreground"
-                  : "glass hover:bg-white/10 text-muted-foreground hover:text-foreground"
+                  : "glass text-muted-foreground hover:bg-white/10 hover:text-foreground"
               }`}
             >
               {category}
@@ -93,65 +90,55 @@ export function YoutubeSection() {
           ))}
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredVideos.map((video, index) => (
+        <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {filteredVideos.map((video) => (
             <a
-              key={video.id}
+              key={`${video.title}-${video.category}`}
               href={`https://www.youtube.com/watch?v=${video.id}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 hover:shadow-xl hover:shadow-primary/10"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="glass group overflow-hidden rounded-3xl transition hover:-translate-y-1"
             >
-              {/* Thumbnail */}
               <div className="relative aspect-video overflow-hidden">
                 <Image
                   src={video.thumbnail}
                   alt={video.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="object-cover transition duration-500 group-hover:scale-105"
                 />
-                {/* Play Overlay */}
-                <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                  <div className="w-16 h-16 rounded-full bg-youtube-red flex items-center justify-center transform scale-90 group-hover:scale-100 transition-transform">
-                    <Play className="w-6 h-6 text-white ml-1" fill="white" />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/35">
+                  <div className="rounded-full bg-red-600 p-4 shadow-lg">
+                    <Play className="h-6 w-6 text-white" />
                   </div>
                 </div>
-                {/* Category Badge */}
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-sm text-xs font-medium text-white">
-                    {video.category}
-                  </span>
+                <div className="absolute left-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs text-white">
+                  {video.category}
                 </div>
-                {/* Views Badge */}
-                <div className="absolute bottom-3 right-3">
-                  <span className="px-2 py-1 rounded bg-black/60 backdrop-blur-sm text-xs text-white">
-                    {video.views} views
-                  </span>
+                <div className="absolute right-4 top-4 rounded-full bg-black/70 px-3 py-1 text-xs text-white">
+                  {video.views} views
                 </div>
               </div>
-              {/* Content */}
+
               <div className="p-5">
-                <h3 className="font-semibold text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                  {video.title}
-                </h3>
+                <h3 className="line-clamp-2 text-lg font-semibold text-white">{video.title}</h3>
+                <div className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-red-400">
+                  Watch Video
+                  <ExternalLink className="h-4 w-4" />
+                </div>
               </div>
             </a>
           ))}
         </div>
 
-        {/* View All CTA */}
-        <div className="text-center mt-12">
+        <div className="mt-10 text-center">
           <a
-            href="https://www.youtube.com/@classic_computers"
+            href="https://www.youtube.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-youtube-red hover:bg-youtube-red/90 text-white font-semibold transition-all hover:scale-105"
+            className="inline-flex items-center gap-2 rounded-2xl bg-red-600 px-6 py-4 font-semibold text-white transition hover:bg-red-500"
           >
-            <Youtube className="w-5 h-5" />
+            <PlayCircle className="h-5 w-5" />
             View All Videos
-            <ExternalLink className="w-4 h-4" />
           </a>
         </div>
       </div>

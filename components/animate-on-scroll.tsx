@@ -25,11 +25,11 @@ const animationClasses = {
     hidden: "opacity-0 translate-x-8",
     visible: "opacity-100 translate-x-0",
   },
-  "scale": {
+  scale: {
     hidden: "opacity-0 scale-95",
     visible: "opacity-100 scale-100",
   },
-  "fade": {
+  fade: {
     hidden: "opacity-0",
     visible: "opacity-100",
   },
@@ -43,7 +43,7 @@ export function AnimateOnScroll({
   threshold = 0.1,
   once = true,
 }: AnimateOnScrollProps) {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement | null>(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -76,12 +76,12 @@ export function AnimateOnScroll({
   return (
     <div
       ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
       className={cn(
         "transition-all duration-700 ease-out",
         isVisible ? classes.visible : classes.hidden,
         className
       )}
-      style={{ transitionDelay: `${delay}ms` }}
     >
       {children}
     </div>

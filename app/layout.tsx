@@ -10,7 +10,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Classic Computers | Premium Laptops & Chip-Level Repairs | SR Nagar, Hyderabad",
   description:
-    "Watch. Trust. Buy. Premium imported laptops (Dell Latitude, HP Elitebook, MacBooks) and expert chip-level motherboard repairs at Classic Computers, SR Nagar, Hyderabad.",
+    "Watch. Trust. Buy. Premium imported laptops and expert chip-level motherboard repairs at Classic Computers, SR Nagar, Hyderabad.",
   keywords: [
     "laptops",
     "chip-level repair",
