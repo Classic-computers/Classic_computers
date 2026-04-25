@@ -2,26 +2,39 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
   title: "Classic Computers | Premium Laptops & Chip-Level Repairs | SR Nagar, Hyderabad",
-  description: "Watch. Trust. Buy. Premium imported laptops (Dell Latitude, HP Elitebook, MacBooks) and expert chip-level motherboard repairs at Classic Computers, SR Nagar, Hyderabad.",
-  keywords: ["laptops", "chip-level repair", "Dell Latitude", "HP Elitebook", "MacBook", "SR Nagar", "Hyderabad", "second hand laptops", "motherboard repair"],
+  description:
+    "Watch. Trust. Buy. Premium imported laptops (Dell Latitude, HP Elitebook, MacBooks) and expert chip-level motherboard repairs at Classic Computers, SR Nagar, Hyderabad.",
+  keywords: [
+    "laptops",
+    "chip-level repair",
+    "Dell Latitude",
+    "HP Elitebook",
+    "MacBook",
+    "SR Nagar",
+    "Hyderabad",
+    "second hand laptops",
+    "motherboard repair",
+  ],
   authors: [{ name: "Classic Computers" }],
   openGraph: {
     title: "Classic Computers | Premium Laptops & Repairs",
-    description: "Watch. Trust. Buy. Premium imported laptops and expert chip-level motherboard repairs.",
+    description:
+      "Watch. Trust. Buy. Premium imported laptops and expert chip-level motherboard repairs.",
     type: "website",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
     title: "Classic Computers | Premium Laptops & Repairs",
-    description: "Watch. Trust. Buy. Premium imported laptops and expert chip-level motherboard repairs.",
+    description:
+      "Watch. Trust. Buy. Premium imported laptops and expert chip-level motherboard repairs.",
   },
 }
 
@@ -34,14 +47,10 @@ export const viewport: Viewport = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="bg-background">
-      <body className={`${inter.variable} font-sans antialiased bg-background text-foreground`}>
-        {children}
-      </body>
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }
