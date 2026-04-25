@@ -1,6 +1,6 @@
 "use client"
 
-import { Play, ChevronDown, Youtube, Shield, Award } from "lucide-react"
+import { Play, ChevronDown, PlayCircle, Shield, Award } from "lucide-react"
 
 export function HeroSection() {
   return (
