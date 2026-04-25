@@ -3,79 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Classic Computers | SR Nagar's Best Laptop Hub</title>
+    <title>Classic Computers | SR Nagar</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://tailwindcss.com"></script>
-    <link href="https://cloudflare.com" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        @keyframes gradient-bg { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
-        .animated-gradient { background: linear-gradient(-45deg, #0f172a, #1e3a8a, #020617, #1e40af); background-size: 400% 400%; animation: gradient-bg 15s ease infinite; }
-        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px; transition: 0.4s; }
-        .glass-card:hover { transform: translateY(-10px); border-color: #3b82f6; background: rgba(255, 255, 255, 0.1); }
-        .btn-glow { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+        body { font-family: 'Poppins', sans-serif; background-color: #020617; color: white; margin: 0; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #020617 100%); }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+        .service-card { transition: all 0.3s ease; }
+        .service-card:hover { transform: translateY(-10px); background: rgba(59, 130, 246, 0.1); border-color: #3b82f6; }
     </style>
 </head>
-<body class="animated-gradient text-white min-h-screen font-sans">
+<body>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me" class="fixed bottom-8 right-8 z-50 bg-green-500 p-4 rounded-full text-white text-3xl shadow-2xl hover:scale-110 transition active:scale-90">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Navbar -->
-    <nav class="p-6">
-        <div class="max-w-7xl mx-auto flex justify-between items-center glass-card px-8 py-4">
-            <h1 class="text-2xl font-black italic tracking-tighter uppercase">Classic <span class="text-blue-500">Computers</span></h1>
-            <div class="hidden md:flex gap-8 font-bold text-sm uppercase">
-                <a href="#services" class="hover:text-blue-400">Services</a>
-                <a href="#gallery" class="hover:text-blue-400">Gallery</a>
-                <a href="tel:+919550191261" class="text-blue-400 font-black tracking-widest">95501 91261</a>
+    <!-- Header -->
+    <nav class="fixed w-full z-50 p-4">
+        <div class="max-w-6xl mx-auto glass rounded-2xl p-4 flex justify-between items-center shadow-2xl">
+            <div class="text-xl font-extrabold tracking-tighter uppercase italic">
+                CLASSIC <span class="text-blue-500">COMPUTERS</span>
             </div>
+            <a href="https://wa.me" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-xl font-bold transition text-sm">WhatsApp</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="py-20 px-6 text-center">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-sm font-bold border border-blue-500/30 mb-6 inline-block">THE HUB OF TECHNOLOGY</span>
-            <h2 class="text-6xl md:text-8xl font-black mb-8 leading-none uppercase">Best Quality <br><span class="text-blue-500">Laptop Service</span></h2>
-            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto italic">"SR Nagar లో అత్యంత తక్కువ ధరకే ప్రీమియం ల్యాప్‌టాప్‌లు మరియు నమ్మకమైన రిపేర్ సేవలు."</p>
-            <div class="flex flex-wrap gap-6 justify-center">
-                <a href="https://share.google" class="bg-blue-600 hover:bg-blue-700 px-12 py-5 rounded-2xl font-black text-xl transition btn-glow">VISIT STORE</a>
-                <a href="https://instagram.com" class="glass-card px-12 py-5 rounded-2xl font-black text-xl hover:bg-white hover:text-black transition">INSTAGRAM</a>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center gradient-bg px-6 pt-20">
+        <div class="text-center max-w-4xl">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-none">
+                PREMIUM <span class="text-blue-500">LAPTOP</span> <br> HUB
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+                SR Nagar లో నంబర్ 1 ల్యాప్‌టాప్ స్టోర్. సెకండ్ హ్యాండ్ ల్యాప్‌టాప్‌లు మరియు చిప్ లెవల్ సర్వీస్ కు నమ్మకమైన చిరునామా.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="tel:+919550191261" class="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-blue-500/20 transition">Call Expert</a>
+                <a href="https://share.google" target="_blank" class="glass px-10 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 transition">Visit Store</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section id="services" class="py-20 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="glass-card p-10">
-            <i class="fas fa-microchip text-blue-500 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold mb-4 uppercase">Chip Level Repair</h3>
-            <p class="text-slate-400">మదర్ బోర్డ్ సమస్యలు, పవర్ ఇష్యూస్ మరియు అన్ని రకాల క్లిష్టమైన రిపేర్లు అనుభవం ఉన్న టెక్నీషియన్స్ ద్వారా చేయబడతాయి.</p>
-        </div>
-        <div class="glass-card p-10 border-blue-500/50">
-            <i class="fas fa-laptop text-blue-500 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold mb-4 uppercase">Premium Sales</h3>
-            <p class="text-slate-400">Dell, HP, Lenovo మరియు MacBooks. అన్ని రకాల బ్రాండెడ్ ల్యాప్‌టాప్‌లు వారంటీతో అతి తక్కువ ధరకే లభిస్తాయి.</p>
-        </div>
-        <div class="glass-card p-10">
-            <i class="fas fa-rocket text-blue-500 text-5xl mb-6"></i>
-            <h3 class="text-2xl font-bold mb-4 uppercase">Fast Upgrades</h3>
-            <p class="text-slate-400">కేవలం 30 నిమిషాల్లో SSD మరియు RAM అప్‌గ్రేడ్. మీ పాత ల్యాప్‌టాప్ వేగాన్ని 10 రెట్లు పెంచుకోండి.</p>
+    <!-- Services -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Card 1 -->
+            <div class="glass p-8 rounded-[32px] service-card">
+                <div class="text-blue-500 text-4xl mb-6">🛠️</div>
+                <h3 class="text-2xl font-bold mb-4">Master Service</h3>
+                <p class="text-gray-400 leading-relaxed">ల్యాప్‌టాప్ ఆన్ అవ్వడం లేదా? డెడ్ అయిందా? మా చిప్ లెవల్ మాస్టర్స్ దాన్ని రిపేర్ చేస్తారు.</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="glass p-8 rounded-[32px] service-card border-blue-500/30">
+                <div class="text-blue-500 text-4xl mb-6">💻</div>
+                <h3 class="text-2xl font-bold mb-4">Best Deals</h3>
+                <p class="text-gray-400 leading-relaxed">అతి తక్కువ ధరకే వారంటీతో కూడిన ప్రొఫెషనల్ ల్యాప్‌టాప్‌లు లభిస్తాయి. HP, Dell, Lenovo స్టాక్ రెడీ.</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="glass p-8 rounded-[32px] service-card">
+                <div class="text-blue-500 text-4xl mb-6">🚀</div>
+                <h3 class="text-2xl font-bold mb-4">Fast Upgrade</h3>
+                <p class="text-gray-400 leading-relaxed">SSD & RAM అప్‌గ్రేడ్స్ కేవలం 1 గంటలో పూర్తి చేసి మీ ల్యాప్‌టాప్‌ను వేగంగా మారుస్తాం.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Area -->
-    <footer class="py-20 text-center border-t border-white/5">
-        <div class="mb-8">
-            <p class="text-slate-500 font-bold uppercase tracking-widest">Classic Computers • Hyderabad • SR Nagar</p>
-            <p class="text-slate-600 mt-2 italic">Opp: New Police Station, Hyderabad, Telangana</p>
+    <!-- Map & Location -->
+    <section class="py-20 px-6">
+        <div class="max-w-5xl mx-auto glass rounded-[40px] p-10 md:p-16 flex flex-col md:flex-row items-center gap-12 border-blue-500/20">
+            <div class="flex-1">
+                <h2 class="text-4xl font-extrabold mb-6">ఇప్పుడే రండి!</h2>
+                <p class="text-gray-400 text-lg mb-8 leading-relaxed">SR Nagar లో మమ్మల్ని కలవండి. మా సర్వీస్ చూస్తే మీరే మళ్ళీ మళ్ళీ వస్తారు!</p>
+                <a href="https://share.google" target="_blank" class="inline-flex items-center gap-3 text-blue-400 font-bold hover:underline">
+                    📍 Opp: New Police Station, SR Nagar, Hyd.
+                </a>
+            </div>
+            <div class="flex-1 w-full h-64 bg-slate-900 rounded-3xl flex items-center justify-center border border-dashed border-gray-700">
+                 <a href="https://share.google" class="text-center group">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition">🗺️</div>
+                    <span class="bg-blue-600 px-6 py-2 rounded-full font-bold">Open Google Maps</span>
+                 </a>
+            </div>
         </div>
-        <div class="flex justify-center gap-10 text-3xl">
-            <a href="https://instagram.com" class="text-pink-500 hover:scale-125 transition"><i class="fab fa-instagram"></i></a>
-            <a href="tel:+919550191261" class="text-blue-500 hover:scale-125 transition"><i class="fas fa-phone"></i></a>
-            <a href="https://share.google" class="text-red-500 hover:scale-125 transition"><i class="fas fa-map-marker-alt"></i></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 text-center">
+        <div class="flex justify-center gap-8 mb-6">
+            <a href="https://instagram.com" class="text-gray-400 hover:text-white text-xl">Instagram</a>
+            <a href="https://wa.me" class="text-gray-400 hover:text-white text-xl">WhatsApp</a>
         </div>
+        <p class="text-gray-600 font-bold tracking-widest uppercase">Classic Computers • SR Nagar</p>
     </footer>
 
 </body>
